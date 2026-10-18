@@ -1,9 +1,9 @@
 {
-  "tag": "v2.6.2",
-  "version": "2.6.2",
-  "notes": "Agora você pode conferir novas versões e baixar a atualização direto pelo aplicativo. O Media Rush mostra o andamento do download e confere o arquivo antes de abrir a instalação.",
-  "apkUrl": "https://github.com/Pepeu2010/mru-7f2d9c41/releases/download/v2.6.2/MediaRush-v2.6.2.apk",
-  "releaseUrl": "https://github.com/Pepeu2010/mru-7f2d9c41/releases/tag/v2.6.2",
-  "sizeBytes": 233891069,
-  "sha256": "f2339ae5d7388b156cb65740a89ca96b7cb14eb30e0e92f8b20052c88c79e233"
+  "releaseUrl": "https://github.com/Pepeu2010/mru-7f2d9c41/releases/tag/v2.6.4",
+  "notes": "Nova marca, acesso e abertura refinados, câmera com leitura animada e revisão do OCR mais clara. Cada linha da foto continua independente.",
+  "sizeBytes": 233384821,
+  "version": "2.6.4",
+  "sha256": "66726d6a59016db02a2e32950bf6f16abd983080128a341ed08047cd5e0b6c7b",
+  "apkUrl": "https://github.com/Pepeu2010/mru-7f2d9c41/releases/download/v2.6.4/MediaRush-v2.6.4.apk",
+  "tag": "v2.6.4"
 }
