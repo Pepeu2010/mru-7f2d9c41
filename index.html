@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="googlebot" content="noindex, nofollow, noarchive">
+  <meta name="theme-color" content="#07111c">
+  <title>Media Rush | Atualização</title>
+  <style>
+    :root{color-scheme:dark;--bg:#07111c;--panel:#101e2d;--line:#263a4e;--text:#f4f8fc;--muted:#aab9c8;--blue:#1681d4;--cyan:#41d3f1}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -20%,#12395c 0,transparent 52%),var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;display:grid;place-items:center;padding:24px}
+    main{width:min(100%,520px)}.card{background:linear-gradient(150deg,#13263a,#0e1a28 60%);border:1px solid var(--line);border-radius:28px;padding:clamp(24px,7vw,40px);box-shadow:0 24px 80px #0006}
+    .brand{display:flex;align-items:center;gap:14px;margin-bottom:34px}.mark{display:grid;place-items:center;width:52px;height:52px;border-radius:17px;background:#09213a;border:1px solid #2875a4;color:var(--cyan)}.mark svg{width:28px;height:28px}.brand strong{font-size:18px;letter-spacing:.01em}.brand span{display:block;color:var(--muted);font-size:13px}
+    .eyebrow{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}h1{font-size:clamp(30px,8vw,42px);line-height:1.1;letter-spacing:-.04em;margin:10px 0 12px}p{color:var(--muted);margin:0}.version{display:inline-block;margin:22px 0 12px;padding:7px 13px;border:1px solid #2875a4;border-radius:999px;color:#8fe8ff;font-weight:700;font-size:14px}
+    .notes{white-space:pre-line;margin:4px 0 24px}.download{display:flex;justify-content:center;align-items:center;min-height:54px;border-radius:16px;padding:12px 20px;background:var(--blue);color:white;text-decoration:none;font-weight:750;box-shadow:0 8px 24px #0875c24a;transition:transform .18s,filter .18s}.download:hover{filter:brightness(1.12);transform:translateY(-1px)}.download[aria-disabled=true]{pointer-events:none;opacity:.55;box-shadow:none}.small{font-size:13px;text-align:center;margin-top:14px}.rule{height:1px;background:var(--line);margin:26px 0 18px}.foot{font-size:12px;color:#91a3b3;text-align:center}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <main>
+    <section class="card" aria-labelledby="title">
+      <div class="brand"><div class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.1 1.8 4.7 13a1 1 0 0 0 .8 1.6h5l-.8 7.6 9.6-12.1a1 1 0 0 0-.8-1.6h-5.3l-.1-6.7Z"/></svg></div><div><strong>Media Rush</strong><span>Atualização do aplicativo</span></div></div>
+      <div class="eyebrow">Canal de atualização</div>
+      <h1 id="title">Uma novidade chegou</h1>
+      <p id="summary">Carregando as informações da atualização…</p>
+      <div class="version" id="version" hidden></div>
+      <p class="notes" id="notes"></p>
+      <a class="download" id="download" href="#" aria-disabled="true">Preparando download…</a>
+      <p class="small" id="size"></p>
+      <div class="rule"></div>
+      <p class="foot">Não precisa entrar em uma conta. O Android pedirá sua confirmação antes de instalar.</p>
+    </section>
+  </main>
+  <script>
+    fetch('./latest.json', {cache:'no-store'}).then(r=>{if(!r.ok)throw new Error();return r.json()}).then(data=>{
+      document.getElementById('summary').textContent=data.notes||'Atualize para receber as melhorias mais recentes.';
+      const version=document.getElementById('version');version.textContent='Versão '+String(data.tag||'').replace(/^v/i,'');version.hidden=false;
+      const link=document.getElementById('download');link.href=data.apkUrl;link.textContent='Baixar Media Rush';link.removeAttribute('aria-disabled');
+      const bytes=Number(data.sizeBytes||0);document.getElementById('size').textContent=bytes>0?'Tamanho aproximado: '+Math.round(bytes/1048576)+' MB':'';
+    }).catch(()=>{document.getElementById('summary').textContent='Não há uma atualização disponível neste momento.';document.getElementById('download').textContent='Nenhum download disponível'});
+  </script>
+</body>
+</html>
