@@ -1,9 +1,9 @@
 {
-  "releaseUrl": "https://github.com/Pepeu2010/mru-7f2d9c41/releases/tag/v2.6.5",
-  "notes": "Corrige o fechamento ao abrir a tela inicial e ao entrar no leitor de documentos. Também ajusta a exibição da marca do app e o ícone de leitura.",
-  "sizeBytes": 233384873,
-  "version": "2.6.5",
-  "sha256": "2dda5f514bf6f233f7fa80627c85e9d45413258f9ca0312d8fa9308c9a8bd077",
-  "apkUrl": "https://github.com/Pepeu2010/mru-7f2d9c41/releases/download/v2.6.5/MediaRush-v2.6.5.apk",
-  "tag": "v2.6.5"
+  "releaseUrl": "https://github.com/Pepeu2010/mru-7f2d9c41/releases/tag/v2.6.6",
+  "notes": "Melhora o reconhecimento do OCR e a revisão individual das linhas identificadas.",
+  "sizeBytes": 233384985,
+  "version": "2.6.6",
+  "sha256": "249839a5f0964693ddabe385c57d24bf7995fbe2f22f09cb4a8a583e09967516",
+  "apkUrl": "https://github.com/Pepeu2010/mru-7f2d9c41/releases/download/v2.6.6/MediaRush-v2.6.6.apk",
+  "tag": "v2.6.6"
 }
